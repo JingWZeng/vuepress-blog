@@ -4,6 +4,7 @@
 set -e
 
 # 先提交源代码到另外一个仓库vuepress-blog
+git init
 git add -A 
 git commit -m "save source"
 git push -f https://github.com/JingWZeng/vuepress-blog.git main
