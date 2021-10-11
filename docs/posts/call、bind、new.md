@@ -1,11 +1,9 @@
 ---
 title: call/apply/bind/new模拟实现
 date: 2021-09-15 
-tags: 
- - 前端
- - JS
 categories: 
- - 前端
+ - JS
+tags: 
  - JS
 ---
 ## call的模拟实现
