@@ -1,26 +1,24 @@
 module.exports = {
+   theme:'reco',
     home:true,
     // 适配移动端
     head: [
         ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
       ],
-    heroText:null,
-    theme:'reco',
+    heroText:'ZJingW~~~', // null 网站标题
     locales: {
         '/': {
           lang: 'zh-CN'
         }
     },
-    huawei: true,
-    logo: '/egg.png',
     themeConfig: { 
-    // 博客配置
      type: "blog",
-         // author
-     author: '曾小胖',
-     authorAvatar: '/egg.png',
+     author: '曾小胖', // 全局名字
+     huawei: true, // 华为文案
+     logo: '/egg.png', // 导航栏左侧的logo
+     authorAvatar: '/egg.png', // 头像
      mode: 'auto', // 默认 auto，auto 跟随系统，dark 暗色模式，light 亮色模式
-     modePicker: false, // 默认 true，false 不显示模式调节按钮，true 则显示
+     modePicker: true, // 默认 true，false 不显示模式调节按钮，true 则显示
     /**
      * support for
      * 'default'
@@ -31,7 +29,7 @@ module.exports = {
      */
      codeTheme: 'tomorrow', // default 'tomorrow'
      subSidebar: 'auto',//在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
-     noFoundPageByTencent: false,
+     noFoundPageByTencent: true,
      friendLink: [
         {
           title: 'vuepress-theme-reco',
@@ -48,8 +46,18 @@ module.exports = {
         // ...
       ],
       nav: [
-        { text: '时间轴', link: '/timeline/', icon: 'reco-date' }
+        {text:'主页', link:'/',icon: 'reco-home'},
+        { text: '时间轴', link: '/timeline/', icon: 'reco-date' },
+        {
+          text:'关于',
+          ariaLabel:'关于',
+          items: [
+            { text:'Github', icon:'reco-github',link:'https://github.com/JingWZeng'},
+            {text:'Hexo站', icon:'reco-blog',link:'https://myblog-six.vercel.app/'}
+          ]
+        }
       ],
+     // 博客配置
      blogConfig: {
         category: {
           location: 2,     // 在导航栏菜单中所占的位置，默认2
@@ -64,6 +72,10 @@ module.exports = {
         ]
       }
     },
+    valineConfig: {
+      appId: '63o4LOmHyCbtn0klTX5RAjUI-MdYXbMMI',// your appId
+      appKey: '2BTkhJRsNIrTv2FfYMtiTpLk', // your appKey
+    }
     // homeImage:
     /**
     heroImageStyle: {
@@ -76,39 +88,3 @@ module.exports = {
      */
 
 }
-
-
-        //格式一：直接跳转，'/'为不添加路由，跳转至首页
-        // nav: [
-        //     { text: '首页', link: '/' },
-        //     {
-        //         text: '分类',
-        //         ariaLabel: '分类',
-        //         items: [
-        //             { text: '文章', link: '/pages/folder1/test1.md' },
-        //             { text: '琐碎', link: '/pages/folder2/test4.md' },
-        //         ]
-        //     },
-        //     { text: '功能演示', link: '/pages/folder1/test3.md' },
-        //     { text: 'Github', link: 'https://github.com/dwanda' },
-        // ],
-        // sidebar: {
-        //     '/pages/folder1/':[
-        //         {
-        //             title: '测试菜单1',   // 必要的
-        //             collapsable: false, // 可选的, 默认值是 true,
-        //             sidebarDepth: 1,    // 可选的, 默认值是 1  //  设置侧边导航自动提取markdown文件标题的层级，默认1为h2层级
-        //             children: [
-        //                 ['test1.md', '子菜单1'],
-        //                 ['test3.md', '子菜单2']
-        //             ]
-        //         },
-        //         {
-        //             title: '测试菜单2',
-        //             collapsable: false, // 可选的, 默认值是 true,
-        //             children: [
-        //                 ['test2.md', '子菜单1']
-        //             ]
-        //         }
-        //     ],
-        // }
